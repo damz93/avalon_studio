@@ -1,0 +1,655 @@
+object frm_lihat_transaksi: Tfrm_lihat_transaksi
+  Left = 265
+  Top = 164
+  BorderStyle = bsNone
+  Caption = 'frm_lihat_transaksi'
+  ClientHeight = 441
+  ClientWidth = 943
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object sPanel1: TsPanel
+    Left = 0
+    Top = 0
+    Width = 943
+    Height = 385
+    Align = alClient
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    SkinData.SkinSection = 'PANEL'
+    DesignSize = (
+      943
+      385)
+    object sGroupBox1: TsGroupBox
+      Left = 12
+      Top = 4
+      Width = 929
+      Height = 372
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Caption = 'Data Transaksi'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Calibri'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      SkinData.SkinSection = 'GROUPBOX'
+      DesignSize = (
+        929
+        372)
+      object sLabel1: TsLabel
+        Left = 19
+        Top = 31
+        Width = 103
+        Height = 18
+        Caption = 'Cari Berdasarkan'
+        ParentFont = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 4473924
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = []
+      end
+      object lbl_kodee: TsLabel
+        Left = 344
+        Top = 0
+        Width = 5
+        Height = 23
+        Caption = 'l'
+        ParentFont = False
+        Visible = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 4473924
+        Font.Height = -19
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+      end
+      object DBGrid1: TDBGrid
+        Left = 20
+        Top = 66
+        Width = 884
+        Height = 291
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        DataSource = DataSource1
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Calibri'
+        Font.Style = []
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -15
+        TitleFont.Name = 'Verdana'
+        TitleFont.Style = []
+        OnCellClick = DBGrid1CellClick
+        Columns = <
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'KODE_TRANSAKSI'
+            Title.Alignment = taCenter
+            Title.Caption = 'Kode Transaksi'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'JAM_INPUT'
+            Title.Alignment = taCenter
+            Title.Caption = 'Waktu Input'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'TGL_TRANSAKSI'
+            Title.Alignment = taCenter
+            Title.Caption = 'Tgl Transaksi'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'NAMA_COST'
+            Title.Alignment = taCenter
+            Title.Caption = 'Nama Costumer'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'NO_HP'
+            Title.Alignment = taCenter
+            Title.Caption = 'Phone'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'JUMLAH_ORANG'
+            Title.Alignment = taCenter
+            Title.Caption = 'Jumlah Orang'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'JENIS_PAKET'
+            Title.Alignment = taCenter
+            Title.Caption = 'Jenis Paket'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DETAIL_FREE'
+            Title.Alignment = taCenter
+            Title.Caption = 'Detail Free'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DETAIL_TAMBAHAN'
+            Title.Alignment = taCenter
+            Title.Caption = 'Detail Tambahan'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_HARGA_PAKET'
+            Title.Alignment = taCenter
+            Title.Caption = 'Harga Paket'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'JUMLAH_SESI'
+            Title.Alignment = taCenter
+            Title.Caption = 'Jumlah Sesi'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'JENIS_LATAR'
+            Title.Alignment = taCenter
+            Title.Caption = 'Jenis Latar'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DETAIL_CHARGE'
+            Title.Alignment = taCenter
+            Title.Caption = 'Detail Charge'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_HARGA_CHARGE'
+            Title.Alignment = taCenter
+            Title.Caption = 'Harga Charge'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_HARGA_LAIN'
+            Title.Alignment = taCenter
+            Title.Caption = 'Harga Tambahan'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'RP_TOTAL'
+            Title.Alignment = taCenter
+            Title.Caption = 'Total'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_CASHBACK'
+            Title.Alignment = taCenter
+            Title.Caption = 'Cashback'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_TOTAL_BAYAR'
+            Title.Alignment = taCenter
+            Title.Caption = 'Total Kotor'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_CREW'
+            Title.Alignment = taCenter
+            Title.Caption = 'Total ke Crew'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taRightJustify
+            Expanded = False
+            FieldName = 'RP_BERSIH'
+            Title.Alignment = taCenter
+            Title.Caption = 'Total Bersih'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'TGL_PENGAMBILAN'
+            Title.Alignment = taCenter
+            Title.Caption = 'Tgl Pengambilan'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'OLEH'
+            Title.Alignment = taCenter
+            Title.Caption = 'Oleh'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'PAYMENT'
+            Title.Alignment = taCenter
+            Title.Caption = 'Payment'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -15
+            Title.Font.Name = 'Calibri'
+            Title.Font.Style = [fsBold]
+            Width = 93
+            Visible = True
+          end>
+      end
+      object cmb_cari: TsComboBox
+        Left = 152
+        Top = 27
+        Width = 321
+        Height = 26
+        Alignment = taLeftJustify
+        BoundLabel.Indent = 0
+        BoundLabel.Font.Charset = DEFAULT_CHARSET
+        BoundLabel.Font.Color = clWindowText
+        BoundLabel.Font.Height = -11
+        BoundLabel.Font.Name = 'MS Sans Serif'
+        BoundLabel.Font.Style = []
+        BoundLabel.Layout = sclLeft
+        BoundLabel.MaxWidth = 0
+        BoundLabel.UseSkinColor = True
+        SkinData.SkinSection = 'COMBOBOX'
+        Style = csDropDownList
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 4473924
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = []
+        ItemHeight = 20
+        ItemIndex = -1
+        ParentFont = False
+        TabOrder = 1
+        OnClick = cmb_cariClick
+        Items.Strings = (
+          'Kode Transaksi'
+          'Nama Costumer'
+          'Jumlah Orang'
+          'Jenis Paket'
+          'Detail Paket'
+          'Jumlah Sesi'
+          'Jenis Latar'
+          'Detail Charge'
+          'Harga Charge'
+          'Detail Tambahan'
+          'Harga Tambahan'
+          'Tanggal Transaksi'
+          'Tanggal Pengambilan'
+          'Total Kotor'
+          'Total Ke Crew'
+          'Total Bersih'
+          'Payment'
+          'Oleh')
+      end
+      object edit_cari: TsEdit
+        Left = 478
+        Top = 27
+        Width = 427
+        Height = 26
+        Anchors = [akLeft, akTop, akRight]
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 4473924
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        OnChange = edit_cariChange
+        SkinData.SkinSection = 'EDIT'
+        BoundLabel.Indent = 0
+        BoundLabel.Font.Charset = DEFAULT_CHARSET
+        BoundLabel.Font.Color = clWindowText
+        BoundLabel.Font.Height = -11
+        BoundLabel.Font.Name = 'MS Sans Serif'
+        BoundLabel.Font.Style = []
+        BoundLabel.Layout = sclLeft
+        BoundLabel.MaxWidth = 0
+        BoundLabel.UseSkinColor = True
+      end
+    end
+  end
+  object pnl_bawah: TsPanel
+    Left = 0
+    Top = 385
+    Width = 943
+    Height = 56
+    Align = alBottom
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    SkinData.SkinSection = 'PANEL'
+    DesignSize = (
+      943
+      56)
+    object sPanel2: TsPanel
+      Left = 7
+      Top = 6
+      Width = 928
+      Height = 45
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 0
+      SkinData.SkinSection = 'PANEL'
+      DesignSize = (
+        928
+        45)
+      object btn_batal: TsSpeedButton
+        Left = 648
+        Top = 3
+        Width = 150
+        Height = 41
+        Anchors = []
+        Caption = '&Batal'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btn_batalClick
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 1
+        Images = frm_koneksi.sAlphaImageList1
+      end
+      object btn_cetak: TsSpeedButton
+        Left = 150
+        Top = 3
+        Width = 150
+        Height = 41
+        Anchors = []
+        Caption = '&Cetak'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btn_cetakClick
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 8
+        Images = frm_koneksi.sAlphaImageList1
+      end
+      object btn_edit: TsSpeedButton
+        Left = 616
+        Top = -17
+        Width = -325
+        Height = 44
+        Anchors = [akLeft, akRight]
+        Caption = '&Edit'
+        Enabled = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Visible = False
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 4
+        Images = frm_koneksi.sAlphaImageList1
+      end
+      object btn_hapus: TsSpeedButton
+        Left = 488
+        Top = 3
+        Width = 150
+        Height = 41
+        Anchors = []
+        Caption = '&Hapus'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btn_hapusClick
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 3
+        Images = frm_koneksi.sAlphaImageList1
+      end
+      object btn_tambah: TsSpeedButton
+        Left = -9
+        Top = 3
+        Width = 150
+        Height = 41
+        Anchors = []
+        Caption = '&Tambah'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btn_tambahClick
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 0
+        Images = frm_koneksi.sAlphaImageList1
+      end
+      object btn_tutup: TsSpeedButton
+        Left = 781
+        Top = 3
+        Width = 150
+        Height = 41
+        Anchors = []
+        Caption = '&Tutup'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btn_tutupClick
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 2
+        Images = frm_koneksi.sAlphaImageList1
+      end
+      object btn_lihat: TsSpeedButton
+        Left = 324
+        Top = 3
+        Width = 150
+        Height = 41
+        Anchors = []
+        Caption = '&Lihat Data'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Calibri'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = btn_lihatClick
+        SkinData.SkinSection = 'SPEEDBUTTON'
+        ImageIndex = 10
+        Images = frm_koneksi.sAlphaImageList1
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = frm_koneksi.qr_transaksi
+    Left = 222
+    Top = 46
+  end
+end

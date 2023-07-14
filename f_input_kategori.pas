@@ -1,0 +1,276 @@
+unit f_input_kategori;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, sSpeedButton, StdCtrls, sComboBox, sEdit, sLabel,
+  sGroupBox, ExtCtrls, sPanel, Mask, sMaskEdit, sCustomComboEdit,
+  sTooledit, sMemo;
+
+type
+  Tfrm_input_kategori = class(TForm)
+    sPanel1: TsPanel;
+    gbox: TsGroupBox;
+    sLabel3: TsLabel;
+    lbl_urut: TsLabel;
+    sLabel4: TsLabel;
+    lbl_kodee: TsLabel;
+    edt_kategori: TsEdit;
+    sPanel2: TsPanel;
+    sGroupBox2: TsGroupBox;
+    btn_batal: TsSpeedButton;
+    btn_simpbar: TsSpeedButton;
+    procedure btn_simpbarClick(Sender: TObject);
+    procedure btn_batalClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure edt_kategoriChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure mrefresh;
+    procedure kosong;
+    procedure urutkanc;
+    procedure perbarui;
+    procedure mrefr_log;
+    procedure simp_log;
+    procedure edt_log;
+    procedure simpanx;
+    procedure cek;
+  end;
+
+var
+  frm_input_kategori: Tfrm_input_kategori;
+    kebenaran:Boolean;
+implementation
+
+uses f_koneksi, f_menu_utama, f_login, f_lihat_kategori;
+
+{$R *.dfm}
+
+{ Tfrm_input_kategori }
+
+procedure Tfrm_input_kategori.cek;
+begin
+  if btn_simpbar.Caption='&Simpan' then
+  begin
+    kebenaran:=true;
+    btn_simpbar.Enabled:=false;
+  end
+  else
+  begin
+    kebenaran:=false;
+  end;
+end;
+
+procedure Tfrm_input_kategori.edt_log;
+begin
+ frm_koneksi.putus;
+with frm_koneksi.qr_log do
+  begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='INSERT INTO tbl_log([WAKTU],[USER],[AKTIVITAS]) VALUES('+
+      QuotedStr(frm_utama.lbl_jam.Caption)+','+
+      QuotedStr(frm_login.lbl_nama_yg_login.Caption)+','+
+      QuotedStr('Edit Kategori *'+lbl_kodee.Caption+'*')+')';
+      ExecSQL;
+      mrefr_log;
+  end;
+end;
+
+procedure Tfrm_input_kategori.kosong;
+begin
+//  urutkanc;
+  edt_kategori.Clear;
+end;
+
+procedure Tfrm_input_kategori.mrefr_log;
+begin
+with frm_koneksi.qr_log do
+    begin
+      Active := False;
+      SQL.Clear;
+      SQL.Text :='SELECT * FROM tbl_log';
+      Active := True;
+    end;
+end;
+
+procedure Tfrm_input_kategori.mrefresh;
+begin
+  with frm_koneksi.qr_kategori do
+    begin
+      Active := False;
+      SQL.Clear;
+      SQL.Text :='SELECT * FROM tbl_kategori_paket ORDER BY ID DESC';
+      Active := True;
+    end;
+end;
+
+procedure Tfrm_input_kategori.perbarui;
+begin
+frm_koneksi.putus;
+with frm_koneksi.qr_kategori do
+  begin
+      close;
+      SQL.Clear;
+      SQL.Text := ' UPDATE tbl_kategori_paket SET ' +
+                  ' NAMA_KATEGORI = '+QuotedStr(edt_kategori.Text)+
+                  ' WHERE KODE_KATEGORI = ' +QuotedStr(lbl_kodee.Caption);
+      ExecSQL;
+      mrefresh;
+  end;
+
+end;
+
+procedure Tfrm_input_kategori.simp_log;
+begin
+frm_koneksi.putus;
+with frm_koneksi.qr_log do
+  begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='INSERT INTO tbl_log([WAKTU],[USER],[AKTIVITAS]) VALUES('+
+      QuotedStr(frm_utama.lbl_jam.Caption)+','+
+      QuotedStr(frm_login.lbl_nama_yg_login.Caption)+','+
+      QuotedStr('Input Kategori *'+lbl_kodee.Caption+'*')+')';
+      ExecSQL;
+      mrefr_log;
+  end;
+end;
+
+procedure Tfrm_input_kategori.simpanx;
+begin
+   frm_koneksi.putus;
+
+with frm_koneksi.qr_kategori do
+  begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='INSERT INTO tbl_kategori_paket(KODE_KATEGORI,NAMA_KATEGORI,WAKTU,OLEH) VALUES('+
+      QuotedStr(lbl_kodee.Caption)+','+
+      QuotedStr(edt_kategori.Text)+','+
+      QuotedStr(frm_utama.lbl_jam.Caption)+','+
+      QuotedStr(frm_login.lbl_nama_yg_login.Caption)+')';
+      ExecSQL;
+      mrefresh;
+  end;
+end;
+
+procedure Tfrm_input_kategori.urutkanc;
+var
+  akhir: integer;
+  kode:String;
+begin
+
+ with frm_koneksi.qr_kategori do
+   begin
+      if RecordCount <> 0 then
+      begin
+        First;
+        akhir := FieldValues['ID'];
+    //    akhir := akhir + 1;
+        inc(akhir);
+        if Length(FieldValues['ID']) = 1 then
+          begin
+            kode := ('KAT-00' + IntToStr(akhir));
+          end
+        else if Length(FieldValues['ID']) = 2 then
+          begin
+            kode := ('KAT-0' + IntToStr(akhir));
+          end
+        else if Length(FieldValues['ID']) = 3 then
+          begin
+            kode := ('KAT-' + IntToStr(akhir));
+          end
+      end
+      else if (RecordCount = 0) then
+        begin
+        kode := ('OUT-0001');
+//        kode := ('tes tesss');
+      end;
+  end;
+      if kebenaran=false then
+        begin
+
+        end
+      else if kebenaran=true then
+        begin
+          lbl_kodee.Caption:=kode;
+          lbl_urut.Caption:=kode;
+        end;
+
+end;
+
+procedure Tfrm_input_kategori.btn_simpbarClick(Sender: TObject);
+begin
+if (btn_simpbar.Caption='&Simpan') then
+Begin
+  if (edt_kategori.Text='')or(edt_kategori.Text=' ') then
+    begin
+      Application.MessageBox('Field Belum Lengkap!','Peringatan',MB_ICONWARNING);
+    end
+  else
+    begin
+      simp_log;
+      simpanx;
+      Application.MessageBox('Data Kategori Telah Tersimpan','Informasi',MB_ICONINFORMATION);
+      kosong;
+      edt_kategori.SetFocus;
+      btn_simpbar.Enabled:=false;
+      mrefresh;
+      urutkanc;
+    end;
+End
+else
+begin
+  if (edt_kategori.Text='')or(edt_kategori.Text=' ') then
+    begin
+      Application.MessageBox('Field Belum Lengkap!','Peringatan',MB_ICONWARNING);
+    end
+  else
+    begin
+      perbarui;
+      edt_log;
+      Application.MessageBox('Data Kategori Telah Diperbaharui','Informasi',MB_ICONINFORMATION);
+      kosong;
+      btn_simpbar.Enabled:=false;
+      frm_lihat_kategori.kosong;
+      frm_input_kategori.Close;
+      with frm_lihat_kategori do
+        begin
+          ManualDock(frm_utama.pnl_utama);
+          WindowState := wsMaximized;
+          Show;
+        end
+    end;
+end;
+end;
+
+procedure Tfrm_input_kategori.btn_batalClick(Sender: TObject);
+begin
+  kosong;
+  mrefresh;
+  close;
+  with frm_lihat_kategori do
+    begin
+      baref;
+      ManualDock(frm_utama.pnl_utama);
+      WindowState := wsMaximized;
+      Show;
+    end
+end;
+
+procedure Tfrm_input_kategori.FormShow(Sender: TObject);
+begin
+  cek;
+end;
+
+procedure Tfrm_input_kategori.edt_kategoriChange(Sender: TObject);
+begin
+  btn_simpbar.Enabled:=true;
+end;
+
+end.
+
