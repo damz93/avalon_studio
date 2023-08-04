@@ -130,8 +130,6 @@ lbl_totalkess.Caption:='Total : Rp0,00';
 
   If frm_koneksi.qr_tip_temp.RecordCount <> 0 then
   begin
-
-
       with frm_koneksi.qr_tip_temp do
         begin
           Active:=false;
@@ -438,7 +436,7 @@ with frm_koneksi do
      qr_transaksi.Active:=true;
      qr_transaksi.First;
      cmb_kodtransk.Clear;
-     cmb_kodtransk.Text:='--- Pilih Kode Transaksi ---';
+     cmb_kodtransk.Text:='- Pilih Kode Transaksi -';
           while not qr_transaksi.Eof do
             begin
               cmb_kodtransk.Items.Add(qr_transaksi.fieldbyname('KODE_TRANSAKSI').AsString);

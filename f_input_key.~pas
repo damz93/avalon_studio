@@ -1,0 +1,302 @@
+unit f_input_key;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, sSpeedButton, StdCtrls, sComboBox, sEdit, sLabel,
+  sGroupBox, ExtCtrls, sPanel, sCheckBox, Mask, sMaskEdit,
+  sCustomComboEdit, sTooledit;
+
+type
+  Tfrm_input_key = class(TForm)
+    sPanel1: TsPanel;
+    gbox: TsGroupBox;
+    sLabel1: TsLabel;
+    sLabel2: TsLabel;
+    edt_key: TsEdit;
+    sPanel2: TsPanel;
+    sGroupBox2: TsGroupBox;
+    btn_batal: TsSpeedButton;
+    btn_simpbar: TsSpeedButton;
+    chk_status: TsCheckBox;
+    tgl_buatz: TsDateEdit;
+    sLabel3: TsLabel;
+    procedure btn_simpbarClick(Sender: TObject);
+    procedure edt_keyExit(Sender: TObject);
+    procedure btn_batalClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure edt_keyChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+     procedure mrefresh;
+    procedure kosong;
+    procedure urutkanc;
+    procedure perbarui;
+    procedure mrefr_log;
+    procedure simp_log;
+    procedure edt_log;
+    procedure simpanx;
+    procedure cek;
+  end;
+
+var
+  frm_input_key: Tfrm_input_key;
+  kebenaran: boolean;
+  status:string;
+
+implementation
+
+uses f_koneksi, f_menu_utama, f_login, f_lihat_key;
+
+{$R *.dfm}
+
+{ Tfrm_input_key }
+
+procedure Tfrm_input_key.cek;
+begin
+   if btn_simpbar.Caption='&Simpan' then
+  begin
+    kebenaran:=true;
+    btn_simpbar.Enabled:=false;
+    edt_key.ReadOnly:=false;
+  end
+  else
+  begin
+    kebenaran:=false;
+    edt_key.ReadOnly:=true
+  end;
+end;
+
+procedure Tfrm_input_key.edt_log;
+begin
+   frm_koneksi.putus;
+with frm_koneksi.qr_log do
+  begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='INSERT INTO tbl_log([WAKTU],[USER],[AKTIVITAS]) VALUES('+
+      QuotedStr(frm_utama.lbl_jam.Caption)+','+
+      QuotedStr(frm_login.lbl_nama_yg_login.Caption)+','+
+      QuotedStr('Kode Key ******')+')';
+      ExecSQL;
+      mrefr_log;
+  end;
+end;
+
+procedure Tfrm_input_key.kosong;
+begin
+  edt_key.Clear;
+  chk_status.Checked:=false;
+  tgl_buatz.Date:=Date;
+end;
+
+procedure Tfrm_input_key.mrefr_log;
+begin
+  with frm_koneksi.qr_log do
+    begin
+      Active := False;
+      SQL.Clear;
+      SQL.Text :='SELECT * FROM tbl_log';
+      Active := True;
+    end;
+end;
+
+procedure Tfrm_input_key.mrefresh;
+begin
+   with frm_koneksi.qr_key do
+    begin
+      Active := False;
+      SQL.Clear;
+      SQL.Text :='SELECT * FROM tbl_key ORDER BY ID DESC';
+      Active := True;
+    end;
+end;
+
+procedure Tfrm_input_key.perbarui;
+var a:string;
+begin
+a:=DateToStr(Date);
+  if chk_status.Checked=true then
+    status:='Y'
+  else
+    status:='T';
+  with frm_koneksi.qr_key do
+  begin
+      close;
+      SQL.Clear;
+      SQL.Text := 'UPDATE `tbl_key` SET ' +
+                  '`TGL_UPDATE`='+QuotedStr(a)+','+
+                  '`STATUS`='+QuotedStr(status)+
+                  'WHERE `KODE`=' +QuotedStr(edt_key.Text);
+      ExecSQL;
+      mrefresh;
+  end;
+end;
+
+procedure Tfrm_input_key.simp_log;
+begin
+  frm_koneksi.putus;
+with frm_koneksi.qr_log do
+  begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='INSERT INTO tbl_log([WAKTU],[USER],[AKTIVITAS]) VALUES('+
+      QuotedStr(frm_utama.lbl_jam.Caption)+','+
+      QuotedStr(frm_login.lbl_nama_yg_login.Caption)+','+
+      QuotedStr('Input Kode Key *******')+')';
+      ExecSQL;
+      mrefr_log;
+  end;
+end;
+
+procedure Tfrm_input_key.simpanx;
+begin
+     if chk_status.Checked=true then
+    status:='Y'
+   else
+    status:='T';
+
+with frm_koneksi.qr_promo do
+  begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='INSERT INTO tbl_key(KODE,TGL_BUAT,TGL_UPDATE,STATUS) VALUES('+
+      QuotedStr(edt_key.Text)+','+
+      QuotedStr(DateToStr(tgl_buatz.Date))+','+
+      QuotedStr(DateToStr(tgl_buatz.Date))+','+
+      QuotedStr(status)+')';
+      ExecSQL;
+      mrefresh;
+  end;
+end;
+
+procedure Tfrm_input_key.urutkanc;
+begin
+
+end;
+
+procedure Tfrm_input_key.btn_simpbarClick(Sender: TObject);
+begin
+if (btn_simpbar.Caption='&Simpan') then
+Begin
+  if (edt_key.Text='') then
+    begin
+      Application.MessageBox('Field Belum Lengkap!','Peringatan',MB_ICONWARNING);
+    end
+  else 
+    begin
+
+
+  with frm_koneksi.qr_key do
+  begin
+    sql.Clear;
+    sql.Add('SELECT * FROM tbl_key');
+    OPEN;
+    if Locate('KODE',edt_key.Text,[])then
+    begin
+      Application.MessageBox('Kode Key sudah ada','Peringatan',MB_ICONWARNING);
+      edt_key.SetFocus;
+    end
+    else if (edt_key.Text='') or (edt_key.Text=' ') then
+    begin
+      Application.MessageBox('Isi Kode Key terlebih dahulu','Peringatan',MB_ICONWARNING);
+      edt_key.SetFocus;
+    end
+    else
+    begin
+      simp_log;
+      simpanx;
+      Application.MessageBox('Data Key telah tersimpan','Informasi',MB_ICONINFORMATION);
+      kosong;
+      edt_key.SetFocus;
+      btn_simpbar.Enabled:=false;
+      mrefresh;
+//      urutkanc;
+    end;
+
+     end;
+          end;
+  
+end
+else
+begin
+  if (edt_key.Text='')then
+    begin
+      Application.MessageBox('Field Belum Lengkap!','Peringatan',MB_ICONWARNING);
+    end
+  else
+    begin
+      perbarui;
+      edt_log;
+      Application.MessageBox('Data Key telah diperbaharui','Informasi',MB_ICONINFORMATION);
+      kosong;
+      btn_simpbar.Enabled:=false;
+      frm_lihat_Key.kosong;
+      frm_input_key.Close;
+      with frm_lihat_key do
+        begin
+          ManualDock(frm_utama.pnl_utama);
+          WindowState := wsMaximized;
+          Show;
+        end
+    end;
+end;
+end;
+
+procedure Tfrm_input_key.edt_keyExit(Sender: TObject);
+begin
+if kebenaran=True then
+ begin
+  with frm_koneksi.qr_key do
+  begin
+    sql.Clear;
+    sql.Add('SELECT * FROM tbl_key');
+    OPEN;
+    if Locate('KODE',edt_key.Text,[])then
+    begin
+      Application.MessageBox('Kode Key sudah ada','Peringatan',MB_ICONWARNING);
+      edt_key.SetFocus;
+    end
+    else if (edt_key.Text='') or (edt_key.Text=' ') then
+    begin
+      Application.MessageBox('Isi Kode Key terlebih dahulu','Peringatan',MB_ICONWARNING);
+      edt_key.SetFocus;
+    end
+    else
+    begin
+      btn_simpbar.Enabled:=true;
+      mrefresh;
+    end;
+  end;
+ end
+end;
+
+procedure Tfrm_input_key.btn_batalClick(Sender: TObject);
+begin
+  kosong;
+  mrefresh;
+  close;
+  with frm_lihat_key do
+    begin
+      baref;
+      ManualDock(frm_utama.pnl_utama);
+      WindowState := wsMaximized;
+      Show;
+    end
+end;
+
+procedure Tfrm_input_key.FormShow(Sender: TObject);
+begin
+cek;
+//edt_key.SetFocus;
+end;
+
+procedure Tfrm_input_key.edt_keyChange(Sender: TObject);
+begin
+btn_simpbar.Enabled:=true;
+end;
+
+end.

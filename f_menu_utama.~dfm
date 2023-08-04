@@ -14340,6 +14340,10 @@ object frm_utama: Tfrm_utama
         Caption = 'Data Kategori'
         OnClick = DataKategori1Click
       end
+      object DataKey1: TMenuItem
+        Caption = 'Data Key'
+        OnClick = DataKey1Click
+      end
       object DataUser1: TMenuItem
         Caption = 'Data User'
         OnClick = DataUser1Click

@@ -16822,6 +16822,7 @@ object frm_koneksi: Tfrm_koneksi
     Top = 72
   end
   object koneksiDB: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=db_ne' +
       'wavalon_.mdb;Mode=Share Deny None;Persist Security Info=False;Je' +
@@ -16833,6 +16834,7 @@ object frm_koneksi: Tfrm_koneksi
       'se;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compac' +
       't Without Replica Repair=False;Jet OLEDB:SFP=False'
     LoginPrompt = False
+    Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 72
     Top = 40
@@ -16888,7 +16890,17 @@ object frm_koneksi: Tfrm_koneksi
     Parameters = <>
     SQL.Strings = (
       'select * from tbl_tip_crew_temp')
-    Left = 120
-    Top = 33
+    Left = 104
+    Top = 41
+  end
+  object qr_key: TADOQuery
+    Active = True
+    Connection = koneksiDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from tbl_key')
+    Left = 8
+    Top = 40
   end
 end

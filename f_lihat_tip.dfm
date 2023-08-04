@@ -1,6 +1,6 @@
 object frm_lihat_tip: Tfrm_lihat_tip
-  Left = 250
-  Top = 139
+  Left = 322
+  Top = 249
   Width = 1376
   Height = 480
   Caption = 'frm_lihat_tip'
@@ -136,15 +136,6 @@ object frm_lihat_tip: Tfrm_lihat_tip
             Title.Alignment = taCenter
             Title.Caption = 'Ditarik Oleh'
             Width = 120
-            Visible = True
-          end
-          item
-            Alignment = taCenter
-            Expanded = False
-            FieldName = 'DIINPUT'
-            Title.Alignment = taCenter
-            Title.Caption = 'Diinput Oleh'
-            Width = 100
             Visible = True
           end>
       end

@@ -1,6 +1,6 @@
 object frm_input_costmake: Tfrm_input_costmake
-  Left = 47
-  Top = 166
+  Left = 27
+  Top = 294
   BorderStyle = bsNone
   Caption = 'frm_input_costmake'
   ClientHeight = 400

@@ -38,7 +38,11 @@ uses
   f_lap_target_periode in 'f_lap_target_periode.pas' {frm_lap_target_periode},
   f_lap_target in 'f_lap_target.pas' {frm_lap_target},
   f_lap_brankas_periode in 'f_lap_brankas_periode.pas' {frm_lap_brankas_berdasarkan},
-  f_lap_brankas in 'f_lap_brankas.pas' {frm_lap_brankas};
+  f_lap_brankas in 'f_lap_brankas.pas' {frm_lap_brankas},
+  f_lihat_key in 'f_lihat_key.pas' {frm_lihat_key},
+  f_input_key in 'f_input_key.pas' {frm_input_key},
+  f_konfirmasi_hapus in 'f_konfirmasi_hapus.pas' {frm_konfirm},
+  f_input_tip2 in 'f_input_tip2.pas' {frm_input_tip2};
 
 {$R *.res}
 begin
@@ -80,6 +84,10 @@ begin
   Application.CreateForm(Tfrm_lap_target, frm_lap_target);
   Application.CreateForm(Tfrm_lap_brankas_berdasarkan, frm_lap_brankas_berdasarkan);
   Application.CreateForm(Tfrm_lap_brankas, frm_lap_brankas);
+  Application.CreateForm(Tfrm_lihat_key, frm_lihat_key);
+  Application.CreateForm(Tfrm_input_key, frm_input_key);
+  Application.CreateForm(Tfrm_konfirm, frm_konfirm);
+  Application.CreateForm(Tfrm_input_tip2, frm_input_tip2);
   Application.Run;
 
   end.

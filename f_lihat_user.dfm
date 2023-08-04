@@ -1,6 +1,6 @@
 object frm_lihat_user: Tfrm_lihat_user
-  Left = 513
-  Top = 152
+  Left = 310
+  Top = 127
   Anchors = []
   BorderStyle = bsNone
   Caption = 'frm_lihat_user'

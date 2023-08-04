@@ -1,6 +1,6 @@
 object frm_lihat_costmake: Tfrm_lihat_costmake
-  Left = 231
-  Top = 82
+  Left = 172
+  Top = 97
   Width = 1046
   Height = 582
   Caption = 'frm_lihat_costmake'
@@ -231,9 +231,9 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       1030
       56)
     object btn_tambah: TsSpeedButton
-      Left = 26
+      Left = 8
       Top = 6
-      Width = 150
+      Width = 180
       Height = 44
       Anchors = []
       Caption = '&Tambah'
@@ -249,9 +249,9 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_edit: TsSpeedButton
-      Left = 240
+      Left = 222
       Top = 6
-      Width = 150
+      Width = 180
       Height = 44
       Anchors = []
       Caption = '&Edit'
@@ -267,9 +267,9 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_hapus: TsSpeedButton
-      Left = 440
+      Left = 423
       Top = 6
-      Width = 150
+      Width = 180
       Height = 44
       Anchors = []
       Caption = '&Hapus'
@@ -285,9 +285,9 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_tutup: TsSpeedButton
-      Left = 853
+      Left = 835
       Top = 6
-      Width = 150
+      Width = 180
       Height = 44
       Anchors = []
       Caption = '&Tutup'
@@ -303,9 +303,9 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_batal: TsSpeedButton
-      Left = 648
+      Left = 631
       Top = 6
-      Width = 150
+      Width = 180
       Height = 44
       Anchors = []
       Caption = '&Batal'

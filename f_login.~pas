@@ -212,7 +212,7 @@ begin
               end
               else
               begin
-                 MessageBox(Application.Handle, ('Maaf, Kombinasi Username dan Password tidak sesuai'),('Kesalahan'),MB_ICONERROR);
+                 MessageBox(Application.Handle, PChar('Kombinasi Username dan Password tidak sesuai'), PChar('Kesalahan'), MB_ICONERROR);
                  frm_utama.Timer2.Enabled:=true;
                  btn_login.Enabled:=false;
               end;
@@ -257,7 +257,7 @@ begin
               end
               else
               begin
-                 MessageBox(Application.Handle, ('Maaf, Kombinasi Username dan Password tidak sesuai'),('Kesalahan'),MB_ICONERROR);
+                 MessageBox(Application.Handle, PChar('Kombinasi Username dan Password tidak sesuai'), PChar('Kesalahan'), MB_ICONERROR);
                  frm_utama.Timer2.Enabled:=true;
                  btn_login.Enabled:=false;
               end;

@@ -335,7 +335,7 @@ end;
 
 procedure Tfrm_login.untukadmin;
 begin
-  frm_lihat_transaksi.btn_hapus.visible:=false;
+//  frm_lihat_transaksi.btn_hapus.visible:=false;
   frm_utama.Mn_user.visible:=false;
   frm_lihat_pengeluaran.btn_edit.Visible:=false;
   frm_lihat_pengeluaran.btn_hapus.Visible:=false;

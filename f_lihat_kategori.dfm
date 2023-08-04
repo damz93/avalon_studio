@@ -18,7 +18,7 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
     Left = 0
     Top = 0
     Width = 1152
-    Height = 449
+    Height = 448
     Align = alClient
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -30,7 +30,7 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
     SkinData.SkinSection = 'PANEL'
     DesignSize = (
       1152
-      449)
+      448)
     object sGroupBox1: TsGroupBox
       Left = 6
       Top = 6
@@ -204,7 +204,7 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
   end
   object pnl_bawah: TsPanel
     Left = 0
-    Top = 449
+    Top = 448
     Width = 1152
     Height = 56
     Align = alBottom

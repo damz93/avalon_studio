@@ -1,8 +1,8 @@
 object frm_lihat_costmake: Tfrm_lihat_costmake
-  Left = 172
-  Top = 97
-  Width = 1046
-  Height = 582
+  Left = 34
+  Top = 291
+  Width = 735
+  Height = 422
   Caption = 'frm_lihat_costmake'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,8 +17,8 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
   object sPanel1: TsPanel
     Left = 0
     Top = 0
-    Width = 1030
-    Height = 488
+    Width = 719
+    Height = 327
     Align = alClient
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -29,13 +29,13 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
     TabOrder = 0
     SkinData.SkinSection = 'PANEL'
     DesignSize = (
-      1030
-      488)
+      719
+      327)
     object sGroupBox1: TsGroupBox
       Left = 6
       Top = 6
-      Width = 1016
-      Height = 475
+      Width = 705
+      Height = 315
       Anchors = [akLeft, akTop, akRight, akBottom]
       Caption = 'Data Paket Costum | MakeUp'
       Font.Charset = ANSI_CHARSET
@@ -47,8 +47,8 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       TabOrder = 0
       SkinData.SkinSection = 'GROUPBOX'
       DesignSize = (
-        1016
-        475)
+        705
+        315)
       object lbl_keperluan: TsLabel
         Left = 19
         Top = 31
@@ -65,8 +65,8 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       object DBGrid1: TDBGrid
         Left = 18
         Top = 63
-        Width = 984
-        Height = 394
+        Width = 673
+        Height = 234
         Cursor = crHandPoint
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
@@ -188,7 +188,7 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       object edit_cari: TsEdit
         Left = 480
         Top = 27
-        Width = 520
+        Width = 209
         Height = 26
         Anchors = [akLeft, akTop, akRight]
         Color = clWhite
@@ -215,8 +215,8 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
   end
   object pnl_bawah: TsPanel
     Left = 0
-    Top = 488
-    Width = 1030
+    Top = 327
+    Width = 719
     Height = 56
     Align = alBottom
     Font.Charset = ANSI_CHARSET
@@ -228,10 +228,10 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
     DesignSize = (
-      1030
+      719
       56)
     object btn_tambah: TsSpeedButton
-      Left = 8
+      Left = -22
       Top = 6
       Width = 180
       Height = 44
@@ -249,7 +249,7 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_edit: TsSpeedButton
-      Left = 222
+      Left = 128
       Top = 6
       Width = 180
       Height = 44
@@ -267,7 +267,7 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_hapus: TsSpeedButton
-      Left = 423
+      Left = 268
       Top = 6
       Width = 180
       Height = 44
@@ -285,7 +285,7 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_tutup: TsSpeedButton
-      Left = 835
+      Left = 556
       Top = 6
       Width = 180
       Height = 44
@@ -303,7 +303,7 @@ object frm_lihat_costmake: Tfrm_lihat_costmake
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_batal: TsSpeedButton
-      Left = 631
+      Left = 413
       Top = 6
       Width = 180
       Height = 44

@@ -1,6 +1,6 @@
 object frm_lihat_kategori: Tfrm_lihat_kategori
-  Left = 192
-  Top = 124
+  Left = 964
+  Top = 178
   Width = 1168
   Height = 543
   Caption = 'frm_lihat_kategori'
@@ -220,11 +220,11 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
       1152
       56)
     object btn_tambah: TsSpeedButton
-      Left = 23
+      Left = 4
       Top = 7
-      Width = 49
+      Width = 200
       Height = 44
-      Anchors = [akLeft, akRight]
+      Anchors = []
       Caption = '&Tambah'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -238,11 +238,11 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_edit: TsSpeedButton
-      Left = 286
+      Left = 198
       Top = 7
-      Width = 49
+      Width = 200
       Height = 44
-      Anchors = [akLeft, akRight]
+      Anchors = []
       Caption = '&Edit'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -256,11 +256,11 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_hapus: TsSpeedButton
-      Left = 550
+      Left = 382
       Top = 7
-      Width = 49
+      Width = 200
       Height = 44
-      Anchors = [akLeft, akRight]
+      Anchors = []
       Caption = '&Hapus'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -274,11 +274,11 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_tutup: TsSpeedButton
-      Left = 1081
+      Left = 904
       Top = 7
-      Width = 47
+      Width = 200
       Height = 44
-      Anchors = [akLeft, akRight]
+      Anchors = []
       Caption = '&Tutup'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -292,11 +292,11 @@ object frm_lihat_kategori: Tfrm_lihat_kategori
       Images = frm_koneksi.sAlphaImageList1
     end
     object btn_batal: TsSpeedButton
-      Left = 815
+      Left = 638
       Top = 7
-      Width = 49
+      Width = 200
       Height = 44
-      Anchors = [akLeft, akRight]
+      Anchors = []
       Caption = '&Batal'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText

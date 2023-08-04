@@ -47,7 +47,7 @@ var
 
 implementation
 
-uses f_koneksi, f_input_tip, f_menu_utama, f_login;
+uses f_koneksi, f_input_tip, f_menu_utama, f_login, f_input_tip2;
 
 {$R *.dfm}
 
@@ -170,7 +170,7 @@ begin
  btn_batalClick(btn_batal);
   kebenaran:=true;
 
-  with frm_input_tip do
+  with frm_input_tip2 do
     begin
       urutkanc;
       tampil_cmb;

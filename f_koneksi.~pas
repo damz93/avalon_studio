@@ -21,6 +21,7 @@ type
     qr_costmake: TADOQuery;
     qr_tip: TADOQuery;
     qr_tip_temp: TADOQuery;
+    qr_key: TADOQuery;
   private
     { Private declarations }
   public

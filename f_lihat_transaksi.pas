@@ -52,11 +52,12 @@ type
 
 var
   frm_lihat_transaksi: Tfrm_lihat_transaksi;
-  kode_transaksi:String;
+  kode_transaksi,customernya,paketnya:String;
 
 implementation
                    uses f_koneksi, f_input_transaksi, f_lap_transaksi,
-  StrUtils, QuickRpt, f_menu_utama, f_login;
+  StrUtils, QuickRpt, f_menu_utama, f_login, f_input_key,
+  f_konfirmasi_hapus;
 {$R *.dfm}
 
 { Tfrm_lihat_transaksi }
@@ -103,6 +104,8 @@ with frm_koneksi.qr_transaksi do
   Begin
     lbl_kodee.Caption:=FieldValues['KODE_TRANSAKSI'];
     kode_transaksi := FieldValues['KODE_TRANSAKSI'];
+    customernya := FieldValues['NAMA_COST'];
+    paketnya := FieldValues['JENIS_PAKET'];
 {    tanggal := FieldValues['TANGGAL_TRANSAKSI'];
     keperluan := FieldValues['KEPERLUAN'];
     keterangan := FieldValues['KETERANGAN'];
@@ -353,15 +356,15 @@ procedure Tfrm_lihat_transaksi.btn_hapusClick(Sender: TObject);
 begin
   if  MessageBox(Application.Handle, PChar('Yakin ingin menghapus Data, dengan Kode Transaksi= "'+(kode_transaksi)+'" ??'), PChar('Konfirmasi'), MB_ICONQUESTION+MB_YESNO)=6 then
 //   if  MessageBox(Application.Handle, PChar('Yakin ingin menghapus Data?'), PChar('Konfirmasi'), MB_ICONQUESTION+MB_YESNO)=6 then
-    with frm_koneksi.qr_transaksi do
+  begin
+  with frm_konfirm do
     begin
-      SQL.Clear;
-      SQL.Text:='DELETE FROM tbl_transaksi WHERE KODE_TRANSAKSI='+QuotedStr(kode_transaksi);
-      ExecSQL;
-      frm_input_transaksi.mrefresh;
-      MessageBox(Application.Handle, ('Berhasil menghapus data'),('Informasi'),MB_ICONINFORMATION);
-      kosong;
-    end
+      edt_detail.text:=kode_transaksi+' | '+customernya+' | '+paketnya;
+
+      edt_key.Text:='';
+      showmodal;
+    end;
+  end
   else
     begin
       btn_edit.Enabled:=false;

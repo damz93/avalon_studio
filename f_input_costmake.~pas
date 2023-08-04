@@ -386,7 +386,7 @@ procedure Tfrm_input_costmake.btn_simpbarClick(Sender: TObject);
 begin
 if (btn_simpbar.Caption='&Simpan') then
 Begin
-  if (edt_bicrew.Text='0')or (edt_detailpromo.Text='') or(edt_hargapr.Text='0')then
+  if (edt_detailpromo.Text='') or(edt_hargapr.Text='0')then
     begin
       Application.MessageBox('Field Belum Lengkap!','Peringatan',MB_ICONWARNING);
     end
@@ -404,7 +404,7 @@ Begin
 End
 else
 begin
-  if (edt_bicrew.Text='0')or (edt_detailpromo.Text='') or(edt_hargapr.Text='0')then
+  if (edt_detailpromo.Text='') or(edt_hargapr.Text='0')then
     begin
       Application.MessageBox('Field Belum Lengkap!','Peringatan',MB_ICONWARNING);
     end

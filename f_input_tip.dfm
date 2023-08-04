@@ -1,6 +1,6 @@
 object frm_input_tip: Tfrm_input_tip
-  Left = 286
-  Top = 67
+  Left = 157
+  Top = 400
   BorderStyle = bsNone
   Caption = 'frm_input_tip'
   ClientHeight = 324

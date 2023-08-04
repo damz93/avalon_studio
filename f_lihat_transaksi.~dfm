@@ -112,7 +112,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -125,7 +125,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -139,7 +139,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -152,7 +152,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -165,7 +165,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -179,7 +179,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -192,7 +192,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -205,7 +205,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -218,7 +218,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -232,7 +232,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -246,7 +246,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -259,7 +259,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -272,7 +272,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -286,7 +286,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -300,7 +300,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -313,7 +313,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -327,7 +327,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -341,7 +341,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -355,7 +355,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -369,7 +369,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -383,7 +383,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -396,7 +396,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end
           item
@@ -410,7 +410,7 @@ object frm_lihat_transaksi: Tfrm_lihat_transaksi
             Title.Font.Height = -15
             Title.Font.Name = 'Calibri'
             Title.Font.Style = [fsBold]
-            Width = 80
+            Width = 93
             Visible = True
           end>
       end

@@ -47,6 +47,7 @@ type
     LaporanTipCrew1: TMenuItem;
     LaporanTargetPencapaian1: TMenuItem;
     LaporanSaldoBrankas1: TMenuItem;
+    DataKey1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -78,6 +79,7 @@ type
     procedure LaporanPemasukan1Click(Sender: TObject);
     procedure LaporanTargetPencapaian1Click(Sender: TObject);
     procedure LaporanSaldoBrankas1Click(Sender: TObject);
+    procedure DataKey1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,7 +100,7 @@ uses f_login, f_koneksi, f_lihat_pengeluaran, f_input_pengeluaran,
   ADODB, f_lihat_promo, f_input_promo, f_lihat_log, f_lihat_kategori,
   f_lap_pemasukan_periode, f_input_costmake, f_lihat_costmake, f_input_tip,
   f_lihat_tip, f_lap_tip_berdasarkan, f_lap_target_periode,
-  f_lap_brankas_periode;
+  f_lap_brankas_periode, f_lihat_key;
 
 {$R *.dfm}
 
@@ -479,7 +481,7 @@ end;
 procedure Tfrm_utama.DataTipCrew1Click(Sender: TObject);
 begin
   tutupk;
-  with frm_lihat_tip do
+  with frm_lihat_tip2 do
     begin
       ManualDock(pnl_utama);
       WindowState := wsMaximized;
@@ -539,6 +541,17 @@ tutupk;
       sembunyi;
       showmodal;
     end;
+end;
+
+procedure Tfrm_utama.DataKey1Click(Sender: TObject);
+begin
+  tutupk;
+  with frm_lihat_key do
+    begin
+      ManualDock(pnl_utama);
+      WindowState := wsMaximized;
+      Show;
+    end
 end;
 
 end.
