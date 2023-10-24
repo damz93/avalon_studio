@@ -870,11 +870,11 @@ begin
                       (StrToInt(edt_bingcet16rframe.Text)*180000)+
                       (StrToInt(edt_bingcet20rframe.Text)*270000)+
                       (StrToInt(edt_bingcet20rwframe.Text)*375000)+
-                      (StrToInt(edt_pasfoto.Text)*10000)+
+                      (StrToInt(edt_pasfoto.Text)*5000)+
                       (StrToInt(edt_teks.Text)*15000)+
                       (StrToInt(edt_namaanggroup.Text)*50000)+
                       (StrToInt(edt_cetakespress.Text)*30000)+
-                      (StrToInt(edt_togaa.Text)*10000)+sepaket+
+                      (StrToInt(edt_togaa.Text)*5000)+sepaket+
                       (StrToInt(edt_bodo_sepas.Text)*300000)+
                       (StrToInt(edt_bodo_cwe.Text)*180000)+
                       (StrToInt(edt_bodo_anak.Text)*100000)+
@@ -897,11 +897,11 @@ begin
                       (StrToInt(edt_hairdo.Text)*100000)+
                       (StrToInt(edt_makeup_standr.Text)*100000);
 
-        total_kecrew:=(StrToInt(edt_pasfoto.Text)*10000)+
+        total_kecrew:=(StrToInt(edt_pasfoto.Text)*5000)+
                       (StrToInt(edt_teks.Text)*15000)+
                       (StrToInt(edt_namaanggroup.Text)*50000)+
                       (StrToInt(edt_cetakespress.Text)*30000)+
-                      (StrToInt(edt_togaa.Text)*10000)+
+                      (StrToInt(edt_togaa.Text)*5000)+
                       (kecrew)+
                       (StrToInt(edt_makeup_pre200.Text)*200000)+
                       (StrToInt(edt_makeup_pre250.Text)*250000)+

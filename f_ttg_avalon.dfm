@@ -1352,15 +1352,15 @@ object frm_ttg_avalon: Tfrm_ttg_avalon
       Font.Style = [fsBold]
     end
     object sLabel2: TsLabel
-      Left = 169
+      Left = 196
       Top = 48
-      Width = 251
+      Width = 206
       Height = 90
       Alignment = taCenter
       Caption = 
         'StudioFoto Mks - BukaTiapHari'#13#10'Utamakan kualitas :)'#13#10'Respon cepa' +
-        't: telp 082328893682'#13#10'Respon santai : line @jxo2641n (pakai @)'#13#10 +
-        'No DM instagram :)'
+        't: telp 0895800980987'#13#10'Instagram : @avalon.studio'#13#10'TikTok: @aval' +
+        'on.studio'
       ParentFont = False
       WordWrap = True
       Font.Charset = DEFAULT_CHARSET

@@ -446,7 +446,7 @@ begin
   end
   else if rdg_ctunggal.ItemIndex=1 then
   begin
-    detail_charge:=detail_charge+' Tunggal OT(>20:00) | ';
+    detail_charge:=detail_charge+' Tunggal OT(>21:00) | ';
     tot_chargtung:=20000;
     tot_crewtung:=20000;
   end;
@@ -460,7 +460,7 @@ begin
   begin
     tot_charcouple:=30000;
     tot_crewcoup:=30000;
-    detail_charge:=detail_charge+' Couple OT(>20:00) | ';
+    detail_charge:=detail_charge+' Couple OT(>21:00) | ';
   end;
   if rdg_group.ItemIndex=0 then
   begin
@@ -472,7 +472,7 @@ begin
   begin
     tot_chargroup:=50000;
     tot_crewtgroup:=50000;
-    detail_charge:=detail_charge+' Group OT(>20:00) | ';
+    detail_charge:=detail_charge+' Group OT(>21:00) | ';
   end;
   
   if c_wisudajepret.Checked=true then

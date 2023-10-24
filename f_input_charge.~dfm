@@ -1,6 +1,6 @@
 object frm_input_charge: Tfrm_input_charge
-  Left = 997
-  Top = 217
+  Left = 668
+  Top = 201
   BorderStyle = bsNone
   Caption = 'frm_input_charge'
   ClientHeight = 429
@@ -324,7 +324,7 @@ object frm_input_charge: Tfrm_input_charge
           SkinData.SkinSection = 'GROUPBOX'
           Items.Strings = (
             '> 19:00 WITA'
-            '> 20:00 WITA')
+            '> 21:00 WITA')
         end
       end
       object sGroupBox4: TsGroupBox
@@ -358,7 +358,7 @@ object frm_input_charge: Tfrm_input_charge
           SkinData.SkinSection = 'GROUPBOX'
           Items.Strings = (
             '> 19:00 WITA'
-            '> 20:00 WITA')
+            '> 21:00 WITA')
         end
       end
       object sGroupBox5: TsGroupBox
@@ -392,7 +392,7 @@ object frm_input_charge: Tfrm_input_charge
           SkinData.SkinSection = 'GROUPBOX'
           Items.Strings = (
             '> 19:00 WITA'
-            '> 20:00 WITA')
+            '> 21:00 WITA')
         end
       end
       object sGroupBox8: TsGroupBox
