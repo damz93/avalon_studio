@@ -160,6 +160,7 @@ begin
   frm_lihat_promo.close;
   frm_lihat_kategori.close;
   frm_lihat_costmake.close;
+  frm_lihat_key.Close;
   frm_lihat_log.Close;
   frm_lap_tip_berdasarkan.close;
 end;

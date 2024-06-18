@@ -47,6 +47,7 @@ type
     sLabel6: TsLabel;
     cmb_jephimp: TsComboBox;
     cmb_orghimp: TsComboBox;
+    ck_satu_org: TsCheckBox;
     procedure edt_jumlahkostumKeyPress(Sender: TObject; var Key: Char);
     procedure btn_batalClick(Sender: TObject);
     procedure rdg_ctunggalClick(Sender: TObject);
@@ -297,7 +298,8 @@ begin
       tot_charwis:=tot_charwis+250000;
     end
   end;
-
+     
+  //wisuda
   if (cmb_menit.ItemIndex<>-1) or (cmb_menit.Text<>'0') then
   begin
     if cmb_menit.Text='1-5' then
@@ -367,38 +369,38 @@ begin
   end;
 
 
-
+   //himpunan
   if (cmb_jephimp.ItemIndex<>-1) or (cmb_jephimp.Text<>'0') then
   begin
     if cmb_jephimp.Text='1-5' then
     begin
       detail_charge:=detail_charge+' Himpunan + '+cmb_jephimp.Text+' Jepret | ';
-      tot_charhim:=tot_charhim+100000;
+      tot_charhim:=tot_charhim+50000;
     end
     else if cmb_jephimp.Text='6-10' then
     begin
       detail_charge:=detail_charge+' Himpunan + '+cmb_jephimp.Text+' Jepret | ';
-      tot_charhim:=tot_charhim+200000;
+      tot_charhim:=tot_charhim+100000;
     end
     else if cmb_jephimp.Text='11-15' then
     begin
       detail_charge:=detail_charge+' Himpunan + '+cmb_jephimp.Text+' Jepret | ';
-      tot_charhim:=tot_charhim+300000;
+      tot_charhim:=tot_charhim+150000;
     end
     else if cmb_jephimp.Text='16-20' then
     begin
       detail_charge:=detail_charge+' Himpunan + '+cmb_jephimp.Text+' Jepret | ';
-      tot_charhim:=tot_charhim+400000;
+      tot_charhim:=tot_charhim+200000;
     end
     else if cmb_jephimp.Text='21-25' then
     begin
       detail_charge:=detail_charge+' Himpunan + '+cmb_jephimp.Text+' Jepret | ';
-      tot_charhim:=tot_charhim+500000;
+      tot_charhim:=tot_charhim+250000;
     end
     else if cmb_jephimp.Text='26-30' then
     begin
       detail_charge:=detail_charge+' Himpunan + '+cmb_jephimp.Text+' Jepret | ';
-      tot_charhim:=tot_charhim+600000;
+      tot_charhim:=tot_charhim+300000;
     end
   end;
 
@@ -474,6 +476,12 @@ begin
     tot_crewtgroup:=50000;
     detail_charge:=detail_charge+' Group OT(>21:00) | ';
   end;
+  if ck_satu_org.Checked=true then
+  begin
+    tot_chargroup:=tot_chargroup+50000;
+    tot_crewtgroup := tot_crewtgroup + 0;
+    detail_charge:=detail_charge+' Tambah 1 Orang | ';
+  end;
   
   if c_wisudajepret.Checked=true then
   begin
@@ -537,6 +545,7 @@ begin
   cmb_orang.Style:=csDropDownList;
   cmb_jephimp.Style:=csDropDownList;
   cmb_orghimp.Style:=csDropDownList;
+  
 end;
 
 end.

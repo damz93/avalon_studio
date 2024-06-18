@@ -1,6 +1,6 @@
 object frm_input_transaksi: Tfrm_input_transaksi
-  Left = 120
-  Top = 42
+  Left = 231
+  Top = 40
   BorderStyle = bsNone
   Caption = 'Form Data Transaksi'
   ClientHeight = 639

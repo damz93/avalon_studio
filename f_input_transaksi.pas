@@ -430,7 +430,7 @@ end;
 
 procedure Tfrm_input_transaksi.btn_tmbh_chargeClick(Sender: TObject);
 begin
-  ck_dp.Checked:=false;
+ ck_dp.Checked:=false;
   edt_dp.Text:='0';
   ck_cashbk.Checked:=false;
   cmb_cashback.ItemIndex:=0;
@@ -485,6 +485,15 @@ begin
   else
   begin
     cmb_cashback.ItemIndex:=0;
+    if (((cmb_jenis_paket.Text = 'Paket 3-5 Orang') or (cmb_jenis_paket.Text = 'Paket 6-10 Orang')) or (cmb_jenis_paket.Text = 'beauty shoot')) then
+      begin
+        frm_input_charge.ck_satu_org.Enabled:=true;
+      end
+    else
+      begin
+        frm_input_charge.ck_satu_org.Enabled:=false;
+         frm_input_charge.ck_satu_org.Checked:=false;
+      end;
     with frm_input_charge do
       begin
         uncheckk;
@@ -2396,6 +2405,9 @@ begin
   cmb_cashback.ItemIndex:=0;
   lbl_total.Caption:='Rp-';
   edt_detailfree.Text:='0';
+  lbl_diamond.Caption:='0';
+  
+  lbl_sisa.Caption:='Rp-';
 end;
 
 procedure Tfrm_input_transaksi.rd_npromClick(Sender: TObject);

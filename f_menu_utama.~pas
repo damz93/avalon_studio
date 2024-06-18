@@ -160,6 +160,7 @@ begin
   frm_lihat_promo.close;
   frm_lihat_kategori.close;
   frm_lihat_costmake.close;
+  frm_lihat_key.Close;
   frm_lihat_log.Close;
   frm_lap_tip_berdasarkan.close;
 end;
@@ -481,7 +482,7 @@ end;
 procedure Tfrm_utama.DataTipCrew1Click(Sender: TObject);
 begin
   tutupk;
-  with frm_lihat_tip2 do
+  with frm_lihat_tip do
     begin
       ManualDock(pnl_utama);
       WindowState := wsMaximized;
